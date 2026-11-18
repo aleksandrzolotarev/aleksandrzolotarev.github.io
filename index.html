@@ -131,7 +131,7 @@ function render(files){
   for(const p of PROJECTS){
     const list=(files[p.key]||[]).sort(natural);
     if(!list.length) continue;
-    const photos=(p.limit?list.slice(0,p.limit):list).map(f=>"photos/"+p.key+"/"+encodeURIComponent(f));
+    const photos=(p.limit?list.slice(0,p.limit):list).map(f=>"photos/"+f.split("/").map(encodeURIComponent).join("/"));
     if(p.group!==lastGroup){const g=document.createElement("div");g.className="group-title";g.textContent=p.group;out.appendChild(g);lastGroup=p.group}
     const el=document.createElement("div");el.className="project";
     const meta=p.meta.replace(/\s*·?\s*\[[^\]]*\]/g,"").trim(); // hide unfilled [placeholders]
@@ -150,7 +150,7 @@ fetch("https://api.github.com/repos/"+REPO+"/git/trees/main?recursive=1")
   .then(r=>r.json())
   .then(d=>{const files={};
     (d.tree||[]).forEach(t=>{const m=t.type==="blob"&&t.path.match(/^photos\/([^/]+)\/([^/]+\.(jpe?g|png|webp))$/i);
-      if(m)(files[m[1].toLowerCase()]=files[m[1].toLowerCase()]||[]).push(m[2])});
+      if(m){const k=m[1].toLowerCase().replace(/[\s_-]/g,"");(files[k]=files[k]||[]).push(m[1]+"/"+m[2])}});
     render(files)})
   .catch(()=>{document.getElementById("projects-list").innerHTML="<p class='notice'>Photos could not be loaded right now — please refresh the page.</p>"});
 </script>
