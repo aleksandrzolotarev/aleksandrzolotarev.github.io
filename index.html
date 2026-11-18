@@ -147,12 +147,17 @@ function render(files){
   if(!shown) out.innerHTML="<p class='notice'>Project photos are being uploaded — please check back soon.</p>";
 }
 
-fetch("https://api.github.com/repos/"+REPO+"/git/trees/main?recursive=1")
-  .then(r=>r.json())
-  .then(d=>{const files={};
+// Photo list comes from photos.json (rebuilt automatically on every upload).
+// The GitHub API (limited to 60 requests/hour) is only a last-resort fallback.
+const getJson=u=>fetch(u,{cache:"no-cache"}).then(r=>{if(!r.ok)throw 0;return r.json()});
+const fromApi=()=>getJson("https://api.github.com/repos/"+REPO+"/git/trees/main?recursive=1").then(d=>{const files={};
     (d.tree||[]).forEach(t=>{const m=t.type==="blob"&&t.path.match(/^photos\/([^/]+)\/([^/]+\.(jpe?g|png|webp))$/i);
       if(m){const k=m[1].toLowerCase().replace(/[\s_-]/g,"");(files[k]=files[k]||[]).push(m[1]+"/"+m[2])}});
-    render(files)})
+    if(!d.tree)throw 0;return files});
+getJson("https://raw.githubusercontent.com/"+REPO+"/main/photos.json")
+  .catch(()=>getJson("photos.json"))
+  .catch(fromApi)
+  .then(render)
   .catch(()=>{document.getElementById("projects-list").innerHTML="<p class='notice'>Photos could not be loaded right now — please refresh the page.</p>"});
 </script>
 </body>
