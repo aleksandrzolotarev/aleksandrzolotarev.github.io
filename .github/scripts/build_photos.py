@@ -9,7 +9,7 @@ for d in sorted(os.listdir("photos")) if os.path.isdir("photos") else []:
         if re.search(r"\.(jpe?g|png|webp)$", f, re.I):
             files.setdefault(key, []).append(d + "/" + f)
 for k in files:
-    files[k].sort()
+    files[k].sort(key=lambda s: [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", s)])
 with open("photos.json", "w") as fh:
     json.dump(files, fh, ensure_ascii=False, indent=1)
 print({k: len(v) for k, v in files.items()})
