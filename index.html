@@ -34,6 +34,8 @@
   .desc{font-size:15px;line-height:1.55;margin:-6px 0 16px;max-width:820px}
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
   .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:zoom-in;background:#eee;display:block}
+  .videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin:0 0 14px}
+  .videos iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:6px;display:block}
   .more{margin-top:10px;background:none;border:1px solid var(--line);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:14px}
   .notice{color:var(--muted);font-style:italic}
   footer{padding:30px 0 50px;color:var(--muted);font-size:14px}
@@ -97,7 +99,7 @@ const PROJECTS = [
   {group:"Featured projects", key:"house14",  title:"House in the forest",           meta:"[year · size · scope]"},
   {group:"Featured projects", key:"house11",  title:"Family house",                  meta:"2022 · [size · scope]"},
   {group:"Featured projects", key:"house10",  title:"Bathhouse",                     meta:"2023 · [size · scope]"},
-  {group:"Featured projects", key:"farm2024", title:"Farm buildings",                meta:"2024 · [size · scope]"},
+  {group:"Featured projects", key:"housefarm", title:"Farm buildings",                meta:"2024 · [size · scope]"},
   {group:"More projects",     key:"house13",  title:"Country house",                 meta:"[year · size · scope]"},
   {group:"More projects",     key:"house12",  title:"Garage &amp; workshop",         meta:"2023 · [size · scope]"},
   {group:"More projects",     key:"house9",   title:"My own house",                  meta:"2021–2022 · [size · scope]"},
@@ -106,9 +108,7 @@ const PROJECTS = [
   {group:"More projects",     key:"house1",   title:"House",                         meta:"[year · size · scope]"},
   {group:"Earlier work (since 2015)", key:"house7", title:"Roof",                    meta:"2015 · roofing", limit:4},
   {group:"Earlier work (since 2015)", key:"house6", title:"House",                   meta:"2019", limit:4},
-  {group:"Earlier work (since 2015)", key:"house2", title:"Facade",                  meta:"[year · scope]", limit:4},
-  {group:"Earlier work (since 2015)", key:"house4", title:"Garage",                  meta:"[year · size]", limit:4},
-  {group:"Earlier work (since 2015)", key:"house5", title:"Garage",                  meta:"[year · size]", limit:4}
+  {group:"Earlier work (since 2015)", key:"house4", title:"Garage",                  meta:"[year · size]", limit:4}
 ];
 const REPO = "aleksandrzolotarev/aleksandrzolotarev.github.io";
 const SHOW = 12; // photos shown before "Show all"
@@ -133,12 +133,12 @@ function render(files){
   let lastGroup=null, shown=0;
   for(const p of PROJECTS){
     const list=(files[p.key]||[]).sort(natural);
-    if(!list.length) continue;
+    if(!list.length && !(p.videos||[]).length) continue;
     const photos=(p.limit?list.slice(0,p.limit):list).map(f=>"photos/"+f.split("/").map(encodeURIComponent).join("/"));
     if(p.group!==lastGroup){const g=document.createElement("div");g.className="group-title";g.textContent=p.group;out.appendChild(g);lastGroup=p.group}
     const el=document.createElement("div");el.className="project";
     const meta=p.meta.replace(/\s*·?\s*\[[^\]]*\]/g,"").trim(); // hide unfilled [placeholders]
-    el.innerHTML="<h3>"+p.title+"</h3>"+(meta?"<p class='meta'>"+meta+"</p>":"")+(p.desc?"<p class='desc'>"+p.desc+"</p>":"")+"<div class='gallery'></div>";
+    el.innerHTML="<h3>"+p.title+"</h3>"+(meta?"<p class='meta'>"+meta+"</p>":"")+(p.desc?"<p class='desc'>"+p.desc+"</p>":"")+((p.videos||[]).length?"<div class='videos'>"+p.videos.map(v=>"<iframe loading='lazy' src='https://www.youtube-nocookie.com/embed/"+v+"' title='"+p.title+" video' allowfullscreen></iframe>").join("")+"</div>":"")+"<div class='gallery'></div>";
     const gal=el.querySelector(".gallery");
     photos.forEach((src,i)=>{const im=document.createElement("img");im.loading="lazy";im.src=src;im.alt=p.title;
       if(i>=SHOW)im.style.display="none";im.onclick=()=>openLb(photos,i);gal.appendChild(im)});
