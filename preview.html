@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aleksandr Zolotarev — Framing Carpenter · All-round Builder</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Portfolio of Aleksandr Zolotarev, framing carpenter with hands-on experience building wood-frame houses since 2015.">
+<style>
+  :root{--ink:#1f2328;--muted:#5b636d;--line:#e3e6ea;--bg:#fafaf8;--card:#fff;--accent:#b5562b;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+  a{color:var(--accent)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(180deg,rgba(15,17,20,.55),rgba(15,17,20,.82)),url('large/house14/20251004_131831.jpg') center/cover #22262b;color:#fff;min-height:92vh;display:flex;align-items:flex-end;padding:80px 0 48px}
+  header .wrap{width:100%}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+  .btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.ghost{border:1px solid rgba(255,255,255,.55);color:#fff}
+  .stats{background:#1f2328;color:#fff;padding:22px 0;border:0}
+  .stats .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;text-align:center}
+  .stats b{display:block;font-size:clamp(26px,4vw,34px);color:#f0c9b4;line-height:1.1}
+  .stats span{font-size:14px;color:#c9cdd2}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:0 0 10px}
+  .tile{position:relative;display:block;border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:#ddd;text-decoration:none}
+  .tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .tile:hover img{transform:scale(1.05)}
+  .tile span{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;color:#fff;font-size:14px;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+  .stages{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 14px}
+  .stage{position:relative;cursor:zoom-in}
+  .stage img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;display:block}
+  .stage span{position:absolute;left:6px;bottom:6px;background:rgba(0,0,0,.65);color:#fff;font-size:12px;padding:2px 7px;border-radius:4px}
+  .stage:not(:last-child)::after{content:"›";position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:var(--accent);font-size:22px;font-weight:700;z-index:1}
+  .project{scroll-margin-top:16px}
+  .flag{width:22px;height:11px;vertical-align:-1px;margin-left:6px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.35)}
+  header h1{margin:0 0 6px;font-size:clamp(28px,5vw,44px);letter-spacing:-.5px}
+  header .role{font-size:clamp(17px,2.6vw,22px);color:#f0c9b4;margin:0 0 18px}
+  header p{max-width:720px;color:#d7dbe0;margin:0 0 18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+  .chips li{border:1px solid #4a5058;border-radius:999px;padding:4px 12px;font-size:14px;color:#e8eaed}
+  .contact{margin-top:22px;font-size:15px;color:#d7dbe0}
+  .contact a{color:#fff}
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:26px;margin:0 0 6px}
+  .sub{color:var(--muted);margin:0 0 24px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .box h3{margin:0 0 6px;font-size:17px}
+  .box p{margin:0;color:var(--muted);font-size:15px}
+  .group-title{font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:34px 0 14px}
+  .project{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:22px}
+  .project h3{margin:0 0 4px;font-size:20px}
+  .meta{color:var(--muted);font-size:15px;margin:0 0 14px}
+  .desc{font-size:15px;line-height:1.55;margin:-6px 0 16px;max-width:820px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+  .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:zoom-in;background:#eee;display:block}
+  .videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin:0 0 14px}
+  .videos iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:6px;display:block}
+  .more{margin-top:10px;background:none;border:1px solid var(--line);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:14px}
+  .notice{color:var(--muted);font-style:italic}
+  footer{padding:30px 0 50px;color:var(--muted);font-size:14px}
+  #lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:10}
+  #lb.on{display:flex}
+  #lb img{max-width:94vw;max-height:88vh;border-radius:4px}
+  #lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;font-size:30px;width:52px;height:52px;border-radius:50%;cursor:pointer}
+  #lb .x{top:14px;right:14px}#lb .p{left:10px;top:50%}#lb .n{right:10px;top:50%}
+  #lb .c{position:absolute;bottom:14px;color:#ccc;font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Aleksandr Zolotarev</h1>
+    <p class="role">Framing Carpenter · All-round Builder</p>
+    <p>Wood-frame houses from foundation to finish — concrete, framing, roofing, siding, windows, interior finishing. I understand electrical and plumbing systems and work well alongside those trades.</p>
+    <ul class="chips">
+      <li>Wall &amp; floor framing</li><li>Roof framing &amp; roofing</li><li>Siding &amp; facades</li>
+      <li>Windows &amp; doors</li><li>Insulation</li><li>Concrete, rebar &amp; formwork</li>
+      <li>Drywall &amp; finishing</li><li>Painting</li><li>Metal work</li><li>SketchUp drawings</li><li>Crew lead (6–8 workers)</li>
+    </ul>
+    <p class="contact">Currently based in Russia · ready to relocate anywhere in Canada <svg class="flag" viewBox="0 0 200 100" aria-label="Canada"><rect width="200" height="100" fill="#d52b1e"/><rect x="50" width="100" height="100" fill="#fff"/><polygon fill="#d52b1e" points="100,16 105,26 109,24 108,42 115,33 118,38 125,35 122,46 128,49 115,60 118,65 103,63 104,78 101,78 101,88 99,88 99,78 96,78 97,63 82,65 85,60 72,49 78,46 75,35 82,38 85,33 92,42 91,24 95,26"/></svg><br>
+      Email: <a href="mailto:goodhouse.aleksandr@gmail.com">goodhouse.aleksandr@gmail.com</a></p>
+    <div class="btns"><a class="btn primary" href="mailto:goodhouse.aleksandr@gmail.com?subject=Framing%20carpenter%20-%20Aleksandr%20Zolotarev">Email me</a><a class="btn ghost" href="#projects">See my projects ↓</a></div>
+  </div>
+</header>
+
+<section class="stats"><div class="wrap row">
+  <div><b>10+</b><span>years building wood-frame houses</span></div>
+  <div><b>3–4</b><span>turnkey houses a year</span></div>
+  <div><b>70–160 m²</b><span>typical house size</span></div>
+  <div><b>6–8</b><span>workers in my crew</span></div>
+</div></section>
+
+<section>
+  <div class="wrap">
+    <h2>Experience at a glance</h2>
+    <p class="sub">What I bring to a framing crew.</p>
+    <div class="grid3">
+      <div class="box"><h3>10+ years on site</h3><p>Building wood-frame structures since 2015; trained in frame construction under a master builder with 27 years of experience in the USA, New Zealand and Australia. Completed training courses in roofing and facade installation.</p></div>
+      <div class="box"><h3>3–4 houses a year</h3><p>Turnkey frame houses of 70–160 m², plus 4–5 smaller buildings (15–36 m²) a year: garages, guest houses, sheds.</p></div>
+      <div class="box"><h3>Design, estimates &amp; calculations</h3><p>I design houses in SketchUp and produce working drawings, calculate material quantities and prepare material and labour cost estimates in Excel.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">A selection of projects built by my crew, with me working hands-on. <strong>These are only a small part of everything we have built since 2015.</strong> Click any photo to enlarge.</p>
+    <div class="tiles" id="tiles"></div>
+    <div id="projects-list"><p class="notice">Loading photos…</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Aleksandr Zolotarev · <a href="mailto:goodhouse.aleksandr@gmail.com">goodhouse.aleksandr@gmail.com</a></div>
+</footer>
+
+<div id="lb"><button class="x" aria-label="Close">×</button><button class="p" aria-label="Previous">‹</button><img alt=""><button class="n" aria-label="Next">›</button><div class="c"></div></div>
+
+<script>
+// Each project = one folder in photos/<key>. Edit titles and details here.
+const PROJECTS = [
+  {group:"Featured projects", key:"project", cover:'1.jpg',  title:"Design work — SketchUp models", meta:"House designs and working drawings I prepared in SketchUp."},
+  {group:"Featured projects", key:"house15", cover:'20250619_134128.jpg', stages:[['Foundation','20250417_175605.jpg'],['Framing','20250428_185011.jpg'],['Enclosed','20250619_134128.jpg'],['Finished','20260320_143758.jpg']],  title:"House by the river",            meta:"2025–2026 · 110 m² living area · new build, from the ground up to turnkey",
+    desc:"Year-round country house. My crew built everything: foundation, framing, roof, facade, windows, insulation, rough and finish interior work, and all building systems — electrical, plumbing, heating, sewer, ventilation and air conditioning. The insulation is designed for extreme cold, and the house is fully self-sufficient: its own septic system, water well, wood-burning fireplace stove and a backup generator with automatic start."},
+  {group:"Featured projects", key:"house14", cover:'20251001_182751.jpg', stages:[['Floor deck','20250919_162954.jpg'],['Walls & rafters','20251004_131831.jpg'],['Roof frame','20251004_132105.jpg'],['Wrapped','20251015_122611.jpg']],  title:"House in the forest",           meta:"[year · size · scope]"},
+  {group:"Featured projects", key:"house11", cover:'22.jpg', stages:[['Foundation','1.jpg'],['Framing','14.jpg'],['Roof & wrap','17.jpg'],['Siding','22.jpg']],  title:"Family house",                  meta:"2022 · [size · scope]"},
+  {group:"Featured projects", key:"house10", cover:'16.jpg', stages:[['Screw piles','1.jpg'],['Framing','6.jpg'],['Roof','10.jpg'],['Finished','16.jpg']],  title:"Bathhouse",                     meta:"2023 · [size · scope]"},
+  {group:"Featured projects", key:"housefarm", cover:'16.jpg', stages:[['Walls','1.jpg'],['Trusses','5.jpg'],['Sheathing','10.jpg'],['Finished','16.jpg']], title:"Farm buildings",                meta:"2024 · [size · scope]"},
+  {group:"More projects",     key:"house13", cover:'IMG_20230705_165031_733.jpg', stages:[['Floor frame','IMG_20230504_105926.jpg'],['Walls','IMG_20230511_181223.jpg'],['Roof','IMG_20230516_190907.jpg'],['Finished','IMG_20240604_164800_898.jpg']],  title:"Country house",                 meta:"[year · size · scope]"},
+  {group:"More projects",     key:"house12", cover:'IMG_20240406_181840_643.jpg', stages:[['Slab','IMG_20230823_113902_160.jpg'],['Walls','IMG_20230903_141840_242.jpg'],['Trusses','IMG_20230905_184315_470.jpg'],['Finished','IMG_20240406_181840_643.jpg']],  title:"Garage &amp; workshop",         meta:"2023 · [size · scope]"},
+  {group:"More projects",     key:"house9", cover:'13.jpg', stages:[['Winter framing','1.jpg'],['Windows','4.jpg'],['Siding','11.jpg'],['Finished','16.jpg']],   title:"My own house",                  meta:"2021–2022 · [size · scope]"},
+  {group:"More projects",     key:"house8",   title:"Facade",                        meta:"2016 · [scope]"},
+  {group:"More projects",     key:"house3",   title:"Guest house",                   meta:"[year · size · scope]"},
+  {group:"More projects",     key:"house1",   title:"House",                         meta:"[year · size · scope]"},
+  {group:"Earlier work (since 2015)", key:"house7", title:"Roof",                    meta:"2015 · roofing", limit:4},
+  {group:"Earlier work (since 2015)", key:"house6", title:"House",                   meta:"2019", limit:4},
+  {group:"Earlier work (since 2015)", key:"house4", title:"Garage",                  meta:"[year · size]", limit:4}
+];
+const REPO = "aleksandrzolotarev/aleksandrzolotarev.github.io";
+const SHOW = 8; // photos shown before "Show all"
+
+const natural = (a,b)=>a.localeCompare(b,undefined,{numeric:true,sensitivity:"base"});
+let current=[], idx=0;
+const lb=document.getElementById("lb"), lbImg=lb.querySelector("img"), lbC=lb.querySelector(".c");
+function openLb(list,i){current=list;idx=i;showLb();lb.classList.add("on")}
+function showLb(){lbImg.src=current[idx];lbC.textContent=(idx+1)+" / "+current.length}
+function step(d){idx=(idx+d+current.length)%current.length;showLb()}
+lb.querySelector(".x").onclick=()=>lb.classList.remove("on");
+lb.querySelector(".p").onclick=()=>step(-1);
+lb.querySelector(".n").onclick=()=>step(1);
+lb.addEventListener("click",e=>{if(e.target===lb)lb.classList.remove("on")});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;
+  if(e.key==="Escape")lb.classList.remove("on");if(e.key==="ArrowLeft")step(-1);if(e.key==="ArrowRight")step(1)});
+let tx=null;lb.addEventListener("touchstart",e=>tx=e.touches[0].clientX);
+lb.addEventListener("touchend",e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)step(dx<0?1:-1);tx=null});
+
+function render(files){
+  const out=document.getElementById("projects-list"); out.innerHTML="";
+  const tiles=document.getElementById("tiles"); tiles.innerHTML="";
+  let lastGroup=null, shown=0;
+  for(const p of PROJECTS){
+    const list=(files[p.key]||[]).sort(natural);
+    p.folder=list.length?list[0].split("/")[0]:p.key;
+    if(!list.length && !(p.videos||[]).length) continue;
+    const sel=p.limit?list.slice(0,p.limit):list;
+    const enc=(dir,f)=>dir+"/"+f.split("/").map(encodeURIComponent).join("/");
+    const jpg=f=>f.replace(/\.(jpe?g|png|webp)$/i,".jpg");
+    const photos=sel.map(f=>enc("large",jpg(f)));      // full-screen view (max 1600 px)
+    const thumbs=sel.map(f=>enc("thumbs",jpg(f)));     // gallery grid (480 px)
+    const originals=sel.map(f=>enc("photos",f));       // fallback if a copy is not built yet
+    if(p.group!==lastGroup){const g=document.createElement("div");g.className="group-title";g.textContent=p.group;out.appendChild(g);lastGroup=p.group}
+    const el=document.createElement("div");el.className="project";el.id="p-"+p.key;
+    const big=f=>"large/"+p.folder+"/"+encodeURIComponent(f.replace(/\.(jpe?g|png|webp)$/i,".jpg"));
+    const small=f=>"thumbs/"+p.folder+"/"+encodeURIComponent(f.replace(/\.(jpe?g|png|webp)$/i,".jpg"));
+    const meta=p.meta.replace(/\s*·?\s*\[[^\]]*\]/g,"").trim(); // hide unfilled [placeholders]
+    el.innerHTML="<h3>"+p.title+"</h3>"+(meta?"<p class='meta'>"+meta+"</p>":"")+(p.desc?"<p class='desc'>"+p.desc+"</p>":"")+((p.videos||[]).length?"<div class='videos'>"+p.videos.map(v=>"<iframe loading='lazy' src='https://www.youtube-nocookie.com/embed/"+v+"' title='"+p.title+" video' allowfullscreen></iframe>").join("")+"</div>":"")+(p.stages?"<div class='stages'>"+p.stages.map(([t,f],i)=>"<div class='stage' data-i='"+i+"'><img loading='lazy' src='"+small(f)+"' alt='"+t+"'><span>"+t+"</span></div>").join("")+"</div>":"")+"<div class='gallery'></div>";
+    if(p.stages){const sl=p.stages.map(([t,f])=>big(f));el.querySelectorAll(".stage").forEach(d=>d.onclick=()=>openLb(sl,+d.dataset.i))}
+    if(list.length){const cv=p.cover||list[0].split("/")[1];const a=document.createElement("a");a.className="tile";a.href="#p-"+p.key;
+      a.innerHTML="<img loading='lazy' src='"+small(cv)+"' alt=''><span>"+p.title+"</span>";tiles.appendChild(a)}
+    const gal=el.querySelector(".gallery");
+    thumbs.forEach((src,i)=>{const im=document.createElement("img");im.loading="lazy";im.decoding="async";im.src=src;im.alt=p.title;
+      im.onerror=()=>{im.onerror=null;im.src=originals[i];photos[i]=originals[i]};
+      if(i>=SHOW)im.style.display="none";im.onclick=()=>openLb(photos,i);gal.appendChild(im)});
+    if(photos.length>SHOW){const b=document.createElement("button");b.className="more";b.textContent="Show all "+photos.length+" photos";
+      b.onclick=()=>{gal.querySelectorAll("img").forEach(x=>x.style.display="");b.remove()};el.appendChild(b)}
+    out.appendChild(el); shown++;
+  }
+  if(!shown) out.innerHTML="<p class='notice'>Project photos are being uploaded — please check back soon.</p>";
+}
+
+// Photo list comes from photos.json (rebuilt automatically on every upload).
+// The GitHub API (limited to 60 requests/hour) is only a last-resort fallback.
+const getJson=u=>fetch(u,{cache:"no-cache"}).then(r=>{if(!r.ok)throw 0;return r.json()});
+const fromApi=()=>getJson("https://api.github.com/repos/"+REPO+"/git/trees/main?recursive=1").then(d=>{const files={};
+    (d.tree||[]).forEach(t=>{const m=t.type==="blob"&&t.path.match(/^photos\/([^/]+)\/([^/]+\.(jpe?g|png|webp))$/i);
+      if(m){const k=m[1].toLowerCase().replace(/[\s_-]/g,"");(files[k]=files[k]||[]).push(m[1]+"/"+m[2])}});
+    if(!d.tree)throw 0;return files});
+getJson("https://raw.githubusercontent.com/"+REPO+"/main/photos.json")
+  .catch(()=>getJson("photos.json"))
+  .catch(fromApi)
+  .then(render)
+  .catch(()=>{document.getElementById("projects-list").innerHTML="<p class='notice'>Photos could not be loaded right now — please refresh the page.</p>"});
+</script>
+</body>
+</html>
